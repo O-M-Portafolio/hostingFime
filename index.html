@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+	<title>Inicio</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="css/the-big-picture.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Pasillo central</title>
+    <meta name="description" content="Geometry Gallery - A-Frame">
+    <script src="dist/aframe-master.js"></script>
+	
+	
+  </head>
+  <body>
+    <a-scene background="color: #a9a9a9" stats>
+      <a-assets>
+        <!-- Geometry mixins. -->
+        
+        
+        <a-mixin id="cylinder"
+                 geometry="primitive: cylinder; radius: 0.2; height: .5;
+                           segmentsRadial: 50; segmentsHeight: 50:
+                           openEnded: true; thetaStart: 0; thetaLength: 360" material="color: #2e8b57">
+        </a-mixin>
+      
+
+        <!-- Layout mixins. -->
+        <a-mixin id="column"
+                  geometry="primitive: box; depth: .75; height: 1.2; width: .75"
+                  material="color: #2e8b57" position="0 .6 0"></a-mixin>
+        <a-mixin id="column-bottom" geometry="primitive: box; depth: 1;
+                                              height: .1; width: 1;"
+                 material="color: #2e8b57" position="0 .1 0">
+        </a-mixin>
+        <a-mixin id="column-light" light="type: point; intensity: 0.5;
+                                          distance: 5;"
+                  position="0 1.5 0">
+        </a-mixin>
+        <a-mixin id="object-on-column" position="0 1.2 0"></a-mixin>
+
+        <!-- Animation mixins. -->
+        <a-mixin id="yoyo" animation__yoyo="dir: alternate; loop: true"></a-mixin>
+        <a-mixin id="spin" animation__spin="property: object3D.rotation.y; to: 360; loop: true; easing: linear; dur: 10000"></a-mixin>
+        <a-mixin id="spinX" mixin="spin" animation__spin="property: object3D.rotation.x"></a-mixin>
+
+        <a-mixin id="color" material="color: #FFFFC3"></a-mixin>
+        <a-mixin id="doubleside" material="side: double"></a-mixin>
+
+        <img id="carpet" src="carpet.jpg">
+        <img id="floor" src="marble.jpg">
+      </a-assets>
+
+      <a-camera position="0 1.6 4"></a-camera>
+
+      <!-- Lights. -->
+      <a-entity light="type: ambient; color: #444"></a-entity>
+      <a-entity light="type: directional; color: #EEE" position="0 1 1"></a-entity>
+
+      <!-- Floor. -->
+      <a-entity geometry="primitive: cylinder; height: .2; radius: 12;"
+                material="color: #BABABA; src: #floor.jpg;
+                          metalness: .2; repeat: 50 20; roughness: .1"
+                position="0 0 0"></a-entity>
+
+      <!-- Carpet. -->
+      <a-entity geometry="primitive: box; depth: 20; height: 0.025; width: 2"
+                material="color: #440000; metalness: 0; src: #carpet.jpg;
+                          repeat: 3 40; roughness: 1"
+                position="0 .2 0">
+      </a-entity>
+
+      <!-- Cylinders. -->
+      <a-entity position="-2.5 0 1">
+         <a-entity mixin="column">
+          <a-entity mixin="column-light"></a-entity>
+          <a-entity mixin="object-on-column color cylinder spinX"></a-entity>
+        </a-entity>
+        <a-entity mixin="column-bottom"></a-entity>
+      </a-entity>
+
+      <!-- Cylinders. -->
+      <a-entity position="-2.5 0 -2">
+        <a-entity mixin="column">
+          <a-entity mixin="column-light"></a-entity>
+          <a-entity mixin="object-on-column color cylinder spinX"></a-entity>
+        </a-entity>
+        <a-entity mixin="column-bottom"></a-entity>
+      </a-entity>
+
+      <!-- Cylinders. -->
+      <a-entity position="-2.5 0 -5">
+        <a-entity mixin="column">
+          <a-entity mixin="column-light"></a-entity>
+          <a-entity mixin="object-on-column color cylinder spinX"></a-entity>
+        </a-entity>
+        <a-entity mixin="column-bottom"></a-entity>
+      </a-entity>
+
+      <!-- Cylinders. -->
+      <a-entity position="2.5 0 1">
+        <a-entity mixin="column">
+          <a-entity mixin="column-light"></a-entity>
+          <a-entity mixin="object-on-column color cylinder spinX"></a-entity>
+        </a-entity>
+        <a-entity mixin="column-bottom"></a-entity>
+      </a-entity>
+
+      <!-- Cylinders. -->
+      <a-entity position="2.5 0 -2">
+        <a-entity mixin="column">
+          <a-entity mixin="column-light"></a-entity>
+          <a-entity mixin="object-on-column color cylinder spinX"></a-entity>
+        </a-entity>
+        <a-entity mixin="column-bottom"></a-entity>
+      </a-entity>
+
+      <!-- Cylinders. -->
+      <a-entity position="2.5 0 -5">
+        <a-entity mixin="column">
+          <a-entity mixin="column-light"></a-entity>
+          <a-entity mixin="object-on-column color cylinder spinX"></a-entity>
+        </a-entity>
+        <a-entity mixin="column-bottom"></a-entity>
+      </a-entity>
+
+     
+      <a-entity position="-.7 .5 -5"
+                text="anchor: left; width: 1.5; color: white; value: Schneider Electric es una compañía europea que opera a nivel mundial. Fue fundada en 1836 por los hermanos Eugène y Adolphe Schneider.">
+      </a-entity>
+	  
+	 
+	  
+    </a-scene>
+	
+	
+	
+	
+	
+	
+	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+    <div class="container">
+      <a class="navbar-brand" href="#">Feria de Empleo</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Inicio
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portfolio-3-col.html">Empresas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portfolio-3-col.html">Fime</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portfolio-3-col.html">Perfil</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ 
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
